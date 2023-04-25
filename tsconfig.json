@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "commonjs",
+        "outDir": "./dist",
+        "experimentalDecorators": true,
+        "preserveConstEnums": true,
+        "allowJs": true,
+        "typeRoots": ["node_modules/@types"],
+    },
+    "include": ["index.ts", "src/**/*"],
+    "exclude": ["node_modules"]
+}
