@@ -16,8 +16,6 @@ export default new class MasterlistAPI {
     private api: string = 'https://cdn.rage.mp/master/'
 
     async isExists(ip: string): Promise<Item | undefined> {
-        const list = await this.list()
-
         return (await this.list())?.[ip]
     }
 
