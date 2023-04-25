@@ -1,5 +1,6 @@
 {
   "name": "rage-masterlist-notify",
+  "license": "ISC",
   "version": "1.0.0",
   "devDependencies": {
     "@types/node": "^18.16.0",
