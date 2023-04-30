@@ -10,6 +10,7 @@ import { schedule } from 'node-cron'
         rage_ip: process.env.rage_ip,
         tg_message: process.env.tg_message,
         tg_bot: process.env.tg_bot,
+        tg_chat_id: process.env.tg_chat_id,
     }))
 
     console.log('Package "rage-masterlist-notify" has started')

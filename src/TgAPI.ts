@@ -3,12 +3,14 @@ import { request, get } from 'https'
 export default class TgAPI {
     readonly hostname: string = 'api.telegram.org'
 
-    constructor(readonly token: string) {}
+    constructor(readonly token: string, readonly chat_id: string = '') {}
 
     async push(text: string) {
         const chat_id = await this.getChatId()
 
         if (!chat_id) return
+
+        console.log('Pushing to chat_id: ' + chat_id)
 
         return this.post(
             `/bot${process.env.tg_bot}/sendMessage`,
@@ -17,6 +19,10 @@ export default class TgAPI {
     }
 
     async getChatId(): Promise<number | undefined> {
+        if (this.chat_id) {
+            return Number(this.chat_id)
+        }
+
         const response = await this.get(`/bot${process.env.tg_bot}/getUpdates`)
         const [{
             message: {
